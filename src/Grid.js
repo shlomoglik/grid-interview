@@ -1,5 +1,4 @@
 import React from 'react';
-const WithComponent = ({props}) => <Component {...props}/>
 
 const Grid = ({ config, data }) => (
   <div className="grid" style={{
@@ -13,9 +12,10 @@ const Grid = ({ config, data }) => (
     {data.map((item,ind)=>(
       <>
       {config.map(({field , component:Component}) => (
-        Component  ? 
-        <Component key={`${ind}_${field}`} data={item[field]} />
-        :
+        Component  ?
+        (<div className='td'>
+          <Component key={`${ind}_${field}`} data={item[field]} />
+        </div> ):
         <div className='td' key={`${ind}_${field}`}>{item[field]}</div>
       ))}
       </>

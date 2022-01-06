@@ -4,7 +4,8 @@ import movies from './data_a';
 import pokemon from './data_b';
 
 const Trailer = ({ data }) => (
-  <a href={data.url}
+  <a 
+     href={data.url}
      target="_blank"
      rel="noopener noreferrer">
     trailer...
